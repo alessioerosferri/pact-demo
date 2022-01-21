@@ -1,0 +1,19 @@
+{
+  "name": "pact-demo",
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "start": "wsrun --parallel start",
+    "test": "wsrun --parallel test"
+  },
+  "devDependencies": {
+    "wsrun": "^5.2.4"
+  },
+  "description": "Microservices with peace of mind",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Alessio Eros Ferri",
+  "private": true
+}
