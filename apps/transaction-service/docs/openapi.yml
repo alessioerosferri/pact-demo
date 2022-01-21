@@ -1,0 +1,60 @@
+openapi: 3.0.0
+info:
+  version: '1.0.0'
+  title: transaction-service
+  description: An external app
+servers:
+  - description: Local development
+    url: http://localhost:5001
+paths:
+  /v1/transfers/:
+    post:
+      operationId: newTransfer
+      summary: "Starts a new transaction with between two accounts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transfer:
+                  $ref: '#/components/schemas/Transfer'
+      tags:
+        - transfer
+      responses:
+        "200":
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TransferStatus"
+
+components:
+  schemas:
+    Transfer:
+      type: object
+      properties:
+        source_id:
+          type: number
+          example: 1
+        destination_id:
+          type: number
+          example: 2
+        amount:
+          type: number
+          example: 100.00
+      required:
+        - source_id
+        - destination_id
+        - amount
+    TransferStatus:
+      type: object
+      properties:
+        transfer:
+          allOf:
+            - $ref: '#/components/schemas/Transfer'
+            - type: object
+              properties:
+                status:
+                  type: string
+                  example: "success"

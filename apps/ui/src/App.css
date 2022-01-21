@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: lightcyan;
+  padding: 0 20%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+table, th, td{
+  border: 1px solid black;
+  width: 100%;
+}
+
+.transaction-box{
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.accounts-table{
+  width: 100%;
+}
+input{
+  text-align: center;
+}

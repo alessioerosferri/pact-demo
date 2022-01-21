@@ -1,0 +1,67 @@
+openapi: 3.0.0
+info:
+  version: '1.0.0'
+  title: account_service
+  description: Account service
+servers:
+  - description: Local development
+    url: http://localhost:5000
+paths:
+  /v1/accounts/{accountid}:
+    parameters:
+      - in: path
+        required: true
+        name: accountid
+        schema:
+          type: number
+    get:
+      operationId: getAccountInfo
+      summary: "get account balance"
+      tags:
+        - accounts
+      responses:
+        "200":
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Account"
+    patch:
+      operationId: updateAccount
+      summary: "update account balance"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Account'
+      tags:
+        - accounts
+      responses:
+        "200":
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Account"
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        account:
+          type: object
+          properties:
+            first_name:
+              type: string
+              example: "Alessio Eros"
+            last_name:
+              type: string
+              example: "Ferri"
+            email_address:
+              type: string
+              example: "thisisnotmyemai@gmail.com"
+            balance:
+              type: number
+              example: 100.00
+          required:
+            - balance

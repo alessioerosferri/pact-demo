@@ -9,6 +9,7 @@
     "test": "wsrun --parallel test"
   },
   "devDependencies": {
+    "prettier": "2.5.1",
     "wsrun": "^5.2.4"
   },
   "description": "Microservices with peace of mind",
