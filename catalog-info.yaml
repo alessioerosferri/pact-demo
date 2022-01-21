@@ -5,6 +5,6 @@ metadata:
   annotations:
     github.com/project-slug: alessioerosferri/pact-demo
 spec:
-  type: api
+  type: openapi
   lifecycle: active
   owner: team-a
