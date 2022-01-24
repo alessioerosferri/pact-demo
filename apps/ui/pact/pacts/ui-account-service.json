@@ -1,0 +1,40 @@
+{
+  "consumer": {
+    "name": "ui"
+  },
+  "provider": {
+    "name": "account-service"
+  },
+  "interactions": [
+    {
+      "description": "a request for an account data",
+      "providerState": "i have an account",
+      "request": {
+        "method": "GET",
+        "path": "/v1/accounts/1",
+        "headers": {
+          "Accept": "application/json, text/plain, */*"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "account": {
+            "first_name": "Josefa",
+            "last_name": "Ortiz",
+            "email": "Ezekiel32@gmail.com",
+            "balance": 300
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

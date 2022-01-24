@@ -50,7 +50,12 @@ pactWith(
       // add expectations
       it("returns a successful body", async () => {
         const account = await getAccountInfo(1);
-        expect(account).toEqual(accountResponse.body.account);
+        expect(account).toEqual({
+          first_name: expect.any(String),
+          last_name: expect.any(String),
+          email: expect.any(String),
+          balance: expect.any(Number),
+        });
       });
     });
   }
