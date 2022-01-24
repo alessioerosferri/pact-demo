@@ -1,7 +1,7 @@
 const { Verifier } = require("@pact-foundation/pact");
-const { server_port } = require("../../constants");
-let { accounts } = require("../services/accounts");
-const { app } = require("../../index");
+const { server_port } = require("./constants");
+let { accounts } = require("./src/services/accounts");
+const { app } = require("./index");
 
 let handler = app.listen(server_port, () => {});
 
