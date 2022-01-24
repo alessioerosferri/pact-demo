@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/www",
-    "test": ""
+    "test": "jest",
+    "pact:publish": "node ./pactPublish.js"
   },
   "dependencies": {
     "@faker-js/faker": "^6.0.0-alpha.3",

@@ -1,7 +1,6 @@
-"use strict";
-
 import { pactWith } from "jest-pact";
 import { newTransaction } from "./transferService";
+import { Matchers } from "@pact-foundation/pact";
 
 pactWith(
   {
@@ -15,7 +14,10 @@ pactWith(
       const transferResponseSuccess = {
         status: 200,
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": Matchers.term({
+            generate: "application/json",
+            matcher: "application/json",
+          }),
         },
         body: {
           transfer: {
@@ -30,7 +32,10 @@ pactWith(
       const transferResponseNotFunds = {
         status: 200,
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": Matchers.term({
+            generate: "application/json",
+            matcher: "application/json",
+          }),
         },
         body: {
           transfer: {
@@ -48,7 +53,10 @@ pactWith(
           path: "/v1/transfers",
           headers: {
             Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
+            "Content-Type": Matchers.term({
+              generate: "application/json",
+              matcher: "application/json",
+            }),
           },
           body: {
             transfer: {
