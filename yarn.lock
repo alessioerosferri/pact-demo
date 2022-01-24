@@ -1499,7 +1499,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@pact-foundation/pact-node@^10.15.0":
+"@pact-foundation/pact-node@^10.15.0", "@pact-foundation/pact-node@^10.17.1":
   version "10.17.1"
   resolved "https://registry.yarnpkg.com/@pact-foundation/pact-node/-/pact-node-10.17.1.tgz#d4eebaf596dee31a345f8794338ec98879059178"
   integrity sha512-hK47aYywVF9hfWvnvANcf18ojtp0Hd1/Gw1QX8Zy8Ho+3ePWAyoT3ESw2x4pLiPCdy0RgjSwQB+sRUe9PWZlnw==
@@ -6089,7 +6089,7 @@ jest-worker@^27.0.2, jest-worker@^27.3.1, jest-worker@^27.4.1, jest-worker@^27.4
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@^27.4.3:
+jest@^27.4.3, jest@^27.4.7:
   version "27.4.7"
   resolved "https://registry.yarnpkg.com/jest/-/jest-27.4.7.tgz#87f74b9026a1592f2da05b4d258e57505f28eca4"
   integrity sha512-8heYvsx7nV/m8m24Vk26Y87g73Ba6ueUd0MWed/NXMhSZIm62U/llVbS0PJe1SHunbyXjJ/BqG1z9bFjGUIvTg==

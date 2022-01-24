@@ -34,6 +34,15 @@
             "email": "Ezekiel32@gmail.com",
             "balance": 300
           }
+        },
+        "matchingRules": {
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json"
+          },
+          "$.body": {
+            "match": "type"
+          }
         }
       }
     }

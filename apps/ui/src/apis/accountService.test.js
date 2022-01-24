@@ -17,16 +17,19 @@ pactWith(
       const accountResponse = {
         status: 200,
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": Matchers.term({
+            generate: "application/json",
+            matcher: "application/json",
+          }),
         },
-        body: {
+        body: Matchers.like({
           account: {
             first_name: "Josefa",
             last_name: "Ortiz",
             email: "Ezekiel32@gmail.com",
             balance: 300,
           },
-        },
+        }),
       };
 
       const accountRequest = {

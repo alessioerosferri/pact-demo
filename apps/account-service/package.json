@@ -7,9 +7,9 @@
     "test": ""
   },
   "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.3",
     "express": "^4.17.2",
     "express-openapi": "^10.1.0",
-    "@faker-js/faker": "^6.0.0-alpha.3",
     "js-yaml": "^4.1.0"
   }
 }

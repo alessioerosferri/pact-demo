@@ -28,4 +28,5 @@ module.exports = {
     accounts[id] = { ...accounts[id], ...data };
     return accounts[id];
   },
+  accounts,
 };
