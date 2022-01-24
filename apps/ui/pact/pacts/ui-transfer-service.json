@@ -1,0 +1,81 @@
+{
+  "consumer": {
+    "name": "ui"
+  },
+  "provider": {
+    "name": "transfer-service"
+  },
+  "interactions": [
+    {
+      "description": "a request for a new transfer with enough funds",
+      "providerState": "i have enough funds",
+      "request": {
+        "method": "POST",
+        "path": "/v1/transfers",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "transfer": {
+            "source_id": 1,
+            "destination_id": 2,
+            "amount": 10
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "transfer": {
+            "source_id": 1,
+            "destination_id": 2,
+            "amount": 10,
+            "status": "SUCCESS"
+          }
+        }
+      }
+    },
+    {
+      "description": "a request for a new transfer without funds",
+      "providerState": "i don't have enough funds",
+      "request": {
+        "method": "POST",
+        "path": "/v1/transfers",
+        "headers": {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "transfer": {
+            "source_id": 1,
+            "destination_id": 2,
+            "amount": 10
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "transfer": {
+            "source_id": 1,
+            "destination_id": 2,
+            "amount": 10,
+            "status": "NOT_ENOUGH_FUNDS"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

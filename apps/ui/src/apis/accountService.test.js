@@ -1,7 +1,9 @@
 "use strict";
 
 import { pactWith } from "jest-pact";
+import { Matchers } from "@pact-foundation/pact";
 import { getAccountInfo } from "./accountService";
+const { term } = Matchers;
 
 pactWith(
   {
@@ -31,7 +33,10 @@ pactWith(
         uponReceiving: "a request for an account data",
         withRequest: {
           method: "GET",
-          path: "/v1/accounts/1",
+          path: term({
+            generate: "/v1/accounts/1",
+            matcher: "/v1/accounts/[0-9]+",
+          }),
           headers: {
             Accept: "application/json, text/plain, */*",
           },

@@ -8,7 +8,7 @@ const transferService = axios.create({
 const newTransaction = async (source_id, destination_id, amount) => {
   const {
     data: { transfer },
-  } = await transferService.post("v1/transfers/", {
+  } = await transferService.post("v1/transfers", {
     transfer: { source_id, destination_id, amount: parseInt(amount) },
   });
   return transfer;
